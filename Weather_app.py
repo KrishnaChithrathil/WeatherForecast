@@ -23,7 +23,7 @@ def weather_app():
         db.session.commit()
     cities_in_db = Weather.query.all()
     city_details_list = []
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=353e46472c4f20dae1bc7e70bc0f02a2'
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=157e46472c9f21dcd1bc7e70bc0f02a2'
     for i in cities_in_db:
         response = requests.get(url.format(i.location)).json()
         weather_data = {
