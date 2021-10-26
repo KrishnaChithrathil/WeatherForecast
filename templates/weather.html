@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <title> Weather Now </title>
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename = "css_for_weather_app.css")}}">
+</head>
+<body>
+    <div class="form-area">
+        <form action="/" method = "POST">
+            <input type="text" placeholder="Enter City" name="city" required>
+            <input type="submit" value="ADD">
+        </form>
+        <div class = "mini-form-area">
+            <figure>
+                <img src = "http://openweathermap.org/img/w/{{ weather_data['icon'] }}.png" alt = "Image">
+            </figure>
+        </div>
+        <div class = "mini-form-area2">
+            <p><b>{{ weather_data['location']}}</b><br><br>
+                {{ weather_data['temperature'] }}<br>
+                {{ weather_data['status'] }}</p><br>
+        </div>
+    </div>
+</body>
+</html>
